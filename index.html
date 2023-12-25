@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #body{
+        background-color: cadetblue;
+        height: 600px;
+    }
+    #letter{
+        margin-left: 400px;
+    }
+    #div{
+        background-color: black;
+        display:inline-block;
+        margin-top: 50px;
+        margin-left: 550px;
+    }
+    #table{
+        width: 200px;
+        height: 200px;
+    }
+    #screen{
+        background-color: darkgreen;
+    }
+    #ac{
+    background-color: aqua;
+    }
+    #ce{
+        background-color: blue;
+    }
+    .btn{
+        background-color: brown;
+        
+    }
+    #equal{
+        background-color: chocolate;
+    }
+</style>
+<body>
+    <div id="body">
+    <h1 id="letter">CALCULATOR APPLICATION</h1>
+    <div id="div">
+    <table id="table">
+        <tr>
+            <td colspan="4"> <input id="screen" placeholder="0" ></td>
+        </tr>
+        <tr>
+            <td><button id="ac" onclick="f1()">AC</button></td>
+            <td> <button id="ce" onclick="f2()">CE</button></td>
+            <td> <button class="btn">%</button></td>
+            <td><button class="btn">/</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn">1</button></td>
+            <td><button class="btn">2</button></td>
+            <td><button class="btn">3</button></td>
+            <td><button class="btn">+</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn">4</button></td>
+            <td><button class="btn">5</button></td>
+            <td><button class="btn">6</button></td>
+            <td><button class="btn">-</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn">7</button></td>
+            <td><button class="btn">8</button></td>
+            <td><button class="btn">9</button></td>
+            <td><button class="btn">*</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn">0</button></td>
+            <td><button class="btn">00</button></td>
+            <td><button class="btn">.</button></td>
+            <td><button id="equal" onclick="f3()">=</button></td>
+        </tr>
+    </div>
+</div>
+</table>
+        <script>
+            let s=document.getElementById("screen")
+            let d=document.getElementsByClassName("btn")
+            for( let i=0;i<d.length;i++)
+            {
+                d[i].addEventListener("click",()=>
+                {
+                    s.value=s.value+d[i].innerText
+                })
+            }
+        //     function f()
+        //     { 
+        //         let s=document.getElementById("screen")
+        //     let d=document.getElementsByClassName("btn")
+        //     for( let i=0;i<d.length;i++)
+        //      {
+        //         array=d[i]
+        //         s.value=s.value+array.innerText
+        //     }
+        // }
+            
+           
+        
+            function f1()
+            {
+                 document.getElementById("screen").value=""
+                
+            }
+            function f2()
+            {
+               let x= document.getElementById("screen")
+                x.value=x.value.slice(0,-1)
+            }
+            function f3()
+            {
+                let x=document.getElementById("screen")
+                x.value=eval(x.value)
+            }
+        </script>
+    
+</body>
+</html>
